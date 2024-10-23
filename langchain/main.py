@@ -22,10 +22,10 @@ Example usage:
 
 python generate_embeddings.py \
     --model_name "Samsoup/Llama-3.2-3B-Instruct-FakeReviews" \
-    --file_path "data/FakeReviews/train.csv" \
-    --prompt "data/FakeReviews/prompts/zero_shot.txt" \
+    --file_path "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/train.csv" \
+    --prompt "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/prompts/zero_shot.txt" \
     --output_filename "train" \
-    --output_dir "data/FakeReviews/embeddings" \
+    --output_dir "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/data/FakeReviews/embeddings" \
     --batch_size 32 \
     --normalize_embeddings True \
     --cache_dir "/work/06782/ysu707/ls6/.cache"
@@ -85,11 +85,6 @@ def save_embeddings(embeddings, output_path):
 
 
 def main(args):
-    # Set CUDA_VISIBLE_DEVICES
-    os.environ["CUDA_VISIBLE_DEVICES"] = (
-        "0"  # Assume single GPU (if multi-process is False)
-    )
-
     # Load the dataset
     df = pd.read_csv(args.file_path)
     texts = df["text"].tolist()
@@ -118,6 +113,8 @@ def main(args):
     # Convert embeddings to a numpy array and save
     embeddings_np = np.array(embeddings)
     output_path = os.path.join(args.output_dir, f"{args.output_filename}.npy")
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
     save_embeddings(embeddings_np, output_path)
 
 
