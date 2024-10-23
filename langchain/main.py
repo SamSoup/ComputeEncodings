@@ -25,7 +25,7 @@ python main.py \
     --file_path "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/train.csv" \
     --prompt "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/prompts/zero_shot.txt" \
     --output_filename "train" \
-    --output_dir "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/data/FakeReviews/embeddings" \
+    --output_dir "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/embeddings" \
     --batch_size 32 \
     --normalize_embeddings True \
     --cache_dir "/work/06782/ysu707/ls6/.cache"
