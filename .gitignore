@@ -1,4 +1,5 @@
-/manual
+data/
+manual/
 
 # test notebooks
 *.ipynb_checkpoints/
