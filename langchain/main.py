@@ -75,7 +75,10 @@ def load_embedding_model(
 # Function to prepend the prompt to the input text
 def get_prompt_with_input(prompt: str, inputs: list):
     for inp in inputs:
-        yield f"{prompt}\nInput:{inp}"
+        if prompt and prompt is not None:
+            yield f"{prompt}\nInput:{inp}"
+        else:
+            yield inp
 
 
 # Function to save embeddings
