@@ -20,7 +20,7 @@ to enable parallelism.
 
 Example usage:
 
-python generate_embeddings.py \
+python main.py \
     --model_name "Samsoup/Llama-3.2-3B-Instruct-FakeReviews" \
     --file_path "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/train.csv" \
     --prompt "/work/06782/ysu707/ls6/ComputeEncodings/data/FakeReviews/prompts/zero_shot.txt" \
