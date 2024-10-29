@@ -1,5 +1,6 @@
 data/
 manual/
+langchain/commands.md
 
 # test notebooks
 *.ipynb_checkpoints/

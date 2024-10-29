@@ -64,9 +64,9 @@ def load_embedding_model(
     )
 
     # Set pad_token to eos_token if it's not already set
-    if embedding_model.client.tokenizer.pad_token is None:
-        embedding_model.client.tokenizer.pad_token = (
-            embedding_model.client.tokenizer.eos_token
+    if embedding_model._client.tokenizer.pad_token is None:
+        embedding_model._client.tokenizer.pad_token = (
+            embedding_model._client.tokenizer.eos_token
         )
 
     return embedding_model
